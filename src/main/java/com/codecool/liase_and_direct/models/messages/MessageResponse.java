@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class MessageResponse {
+    Long id;
     String message;
     String firstname;
     String lastname;

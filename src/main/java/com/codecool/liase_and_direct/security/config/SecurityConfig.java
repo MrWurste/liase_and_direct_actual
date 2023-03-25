@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .headers().frameOptions().sameOrigin()
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/**").permitAll()
                 .requestMatchers(toH2Console()).permitAll()
                 .anyRequest()
                 .authenticated()

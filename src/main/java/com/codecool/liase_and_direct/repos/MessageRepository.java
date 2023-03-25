@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Repository of Message. Because it extends JpaRepository no implementation is needed.
- * Model: typeOfMethiod 'keyWord''fieldFromClass'(parameter type)
+ * Model: typeOfMethod 'keyWord''fieldFromClass'(parameter type)
  * It's possible to add 'And' and another 'fieldFromClass' and so on.
  */
 public interface MessageRepository extends JpaRepository<Message,Long> {

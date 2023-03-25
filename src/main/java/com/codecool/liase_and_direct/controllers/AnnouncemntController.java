@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("api/announcements")
+@RequestMapping("/api/announcements")
 public class AnnouncemntController {
 
     @Autowired
@@ -35,7 +35,7 @@ public class AnnouncemntController {
     @PostMapping
     public ResponseEntity<String> test(@RequestBody AnnouncementRequest announcementRequest) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication.getAuthorities().equals(Role.ADMIN)) {
+        if (authentication.getAuthorities().iterator().next().toString().equals(Role.ADMIN.toString())) {
             String currentEmail = authentication.getName();
             List<String> userEmails = announcementRequest.getUserEmails();
             String title = announcementRequest.getTitle(), body = announcementRequest.getBody();

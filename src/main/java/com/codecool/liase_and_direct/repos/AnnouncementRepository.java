@@ -9,7 +9,7 @@ import java.util.Set;
 
 /**
  * Repository of Announcement. Because it extends JpaRepository no implementation is needed.
- * Model: typeOfMethiod 'keyWord''fieldFromClass'(parameter type)
+ * Model: typeOfMethod 'keyWord''fieldFromClass'(parameter type)
  */
 public interface AnnouncementRepository extends JpaRepository<Announcement, Long> {
     List<Announcement> findAllByShowToIn(Set<User> s);

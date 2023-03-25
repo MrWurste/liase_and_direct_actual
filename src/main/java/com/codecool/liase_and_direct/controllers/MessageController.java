@@ -48,7 +48,7 @@ public class MessageController {
      * Get all messages addressed to current user.
      * @return Set of all messages
      */
-    @GetMapping("all")
+    @GetMapping("/all")
     public ResponseEntity<Set<MessageResponse>> getMessages() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentEmail = authentication.getName();
@@ -56,7 +56,7 @@ public class MessageController {
         Optional<User> me = userRepository.findByEmail(currentEmail);
         me.ifPresent(I -> {
             for (Message m: messageRepository.findAllByAddressedTo(me.get())) {
-                messages.add(new MessageResponse(m.getMessage(),m.getFrom().getFirstname(),m.getFrom().getLastname(),m.getFrom().getEmail()));
+                messages.add(new MessageResponse(m.getId(),m.getMessage(),m.getFrom().getFirstname(),m.getFrom().getLastname(),m.getFrom().getEmail()));
             }
         });
         if(messages.isEmpty()) {
