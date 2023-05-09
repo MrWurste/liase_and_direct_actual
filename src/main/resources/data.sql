@@ -11,7 +11,7 @@ insert into announcement (title,body,created_by_id)
 values  ('Owocowy czwartek','Jutro będzie owocowy czwartek. Bedę sprawdzał owoce Waszej pracy. Przygotujcie się i pokażcie jak dobrze idzie Wam uprawianie kodu.',1);
 
 insert into announcement (title,body,created_by_id)
-values  ('Wezwanie','Proszę stawić się do bióra o godzinie 9:00. Omówimy zasady pracy klona.',1);
+values  ('Pilne wezwanie','Proszę stawić się do bióra o godzinie 9:00. Omówimy zasady pracy klona.',1);
 
 insert into announcement_show_to (announcement_id,show_to_id)
 values (1,2),(2,3),(2,4),(2,5),(2,6);
